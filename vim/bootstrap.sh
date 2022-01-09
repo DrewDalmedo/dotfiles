@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-function getVundle() {
+function getVundle () {
     git clone "https://github.com/VundleVim/Vundle.vim" ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 }
