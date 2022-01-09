@@ -41,7 +41,7 @@ autocmd! User GoyoEnter set number
 autocmd! BufWritePost *.tex exec '!pdflatex %' | exec '!biber %:r' | exec '!pdflatex %' | execute ':redraw!'
 
 " colorscheme
-colorscheme molokai
+silent! colorscheme molokai
 
 syntax on
 set number
