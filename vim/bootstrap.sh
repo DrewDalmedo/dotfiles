@@ -9,16 +9,8 @@ getVundle() {
 echo "Bootstrapping vim..."
 
 # check if vim is installed
-if [ ![type -P vim &> /dev/null ]]; then
-    echo "Error: vim is not installed! Exiting script..."
-    exit 0
-fi
+which vim &>/dev/null || (echo "Error: vim is not installed! Exiting script..."; exit 0)
 
 # get vundle and install the plugins
-if [ type -P git &> /dev/null ]; then
-    ln -s ./.vimrc ~/.vimrc
-    getVundle
-else
-    echo "Error: command 'git' not found! Exiting script..."
-    exit 0
-fi
+(which git &>/dev/null && ln -s ./.vimrc ~/.vimrc; getVundle) || (echo "Error: command 'git' not found! Exiting script..."; exit 0)
+
