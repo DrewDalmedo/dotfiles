@@ -10,7 +10,7 @@ getVundle() {
 
 installDependenciesDeb() {
     echo "Installing YouCompleteMe dependencies..."
-    (sudo apt install build-essential cmake vim-nox python3-dev mono-complete golang nodejs default-jdk npm -y) || (echo "Error: could not install dependencies! Exiting script..."; exit 0)
+    (sudo apt install build-essential cmake vim-nox python3-dev mono-complete golang nodejs default-jdk npm -y -qq &>/dev/null) || (echo "Error: could not install dependencies! Exiting script..."; exit 0)
     echo "Compiling YouCompleteMe..."
     python3 ~/.vim/bundle/YouCompleteMe/install.py --all &>/dev/null
     echo "YouCompleteMe successfully installed!"
@@ -28,5 +28,5 @@ which vim &>/dev/null || (echo "Error: vim is not installed! Exiting script...";
 # compile YouCompleteMe
 (which apt &>/dev/null && installDependenciesDeb) || (echo "Error: System is not deb-based, could not install YCM dependencies."; exit 0)
 
-echo "\n"
+echo ""
 echo "Done! Enjoy your new vim config!"
