@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function getVundle () {
+getVundle() {
     git clone "https://github.com/VundleVim/Vundle.vim" ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 }
@@ -9,13 +9,13 @@ function getVundle () {
 echo "Bootstrapping vim..."
 
 # check if vim is installed
-if [ !command -v vim ]; then
+if [ ![type -P vim &> /dev/null ]]; then
     echo "Error: vim is not installed! Exiting script..."
     exit 0
 fi
 
 # get vundle and install the plugins
-if [ command -v git ]; then
+if [ type -P git &> /dev/null ]; then
     ln -s ./.vimrc ~/.vimrc
     getVundle
 else
