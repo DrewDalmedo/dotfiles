@@ -12,5 +12,5 @@ echo "Bootstrapping vim..."
 which vim &>/dev/null || (echo "Error: vim is not installed! Exiting script..."; exit 0)
 
 # get vundle and install the plugins
-(which git &>/dev/null && ln -s ./.vimrc ~/.vimrc; getVundle) || (echo "Error: command 'git' not found! Exiting script..."; exit 0)
+(which git &>/dev/null && ln ./.vimrc ~/.vimrc; getVundle) || (echo "Error: command 'git' not found! Exiting script..."; exit 0)
 
