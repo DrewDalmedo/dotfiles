@@ -1,7 +1,9 @@
 #!/bin/bash
 
 getVundle() {
-    git clone "https://github.com/VundleVim/Vundle.vim" ~/.vim/bundle/Vundle.vim
+    echo "Downloading Vundle..."
+    git clone "https://github.com/VundleVim/Vundle.vim" ~/.vim/bundle/Vundle.vim &>/dev/null
+    echo "Installing plugins..."
     vim +PluginInstall +qall &>/dev/null || (echo "Error: Vundle didn't install correctly! Exiting script..."; exit 0)
     echo "Vundle successfully installed!"
 }
