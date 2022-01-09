@@ -2,7 +2,7 @@
 
 getVundle() {
     git clone "https://github.com/VundleVim/Vundle.vim" ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+    vim +PluginInstall +qall &>/dev/null
 }
 
 # main part of the program
